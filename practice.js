@@ -124,14 +124,13 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 function uniq(arr, callback){
-  let sortedArr = arr.sort()
-  for(let i = 0; i < sortedArr.length - 1; i++){
-    if(sortedArr[i + 1] === sortedArr[i]){
-      sortedArr.splice(i, 1)
-      i=0
+  for(let i = 0; i < arr.length; i++){
+    for(let i2 = 1; i2 < arr.length; i2++)
+    if(arr[i] === arr[i2] && i !== i2){
+      arr.splice(i, 1)
     }
   }
-  return callback(sortedArr)
+  return callback(arr)
 }
 
 // Do not edit the code below.
